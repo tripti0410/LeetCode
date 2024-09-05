@@ -4,8 +4,10 @@ class Solution:
         if missing_val > 6*n or missing_val<n:
             return []
         val = missing_val // n
-        result = [val] * n
+        result = [0] * n
         remainder = missing_val % n
         for i in range(remainder):
-            result[i] += 1
+            result[i] = val + 1
+        for i in range(remainder, n):
+            result[i] = val
         return result
