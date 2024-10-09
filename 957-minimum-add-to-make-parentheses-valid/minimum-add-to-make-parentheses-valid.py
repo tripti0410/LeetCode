@@ -1,12 +1,12 @@
 class Solution:
     def minAddToMakeValid(self, s: str) -> int:
-        stack = []
+        openp, closep = 0, 0
         for each in s:
             if each == '(':
-                stack.append(each)
+                openp += 1
             elif each == ')':
-                if stack and stack[-1]=='(':
-                    stack.pop()
+                if openp > 0:
+                    openp -= 1
                 else:
-                    stack.append(')')
-        return len(stack)
+                    closep += 1
+        return openp + closep
