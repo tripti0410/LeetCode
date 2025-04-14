@@ -3,20 +3,16 @@ class Solution:
         if len(s) != len(t):
             return False
 
-        str_map = {}
-        def is_already_mapped(value):
-            for each in str_map:
-                if str_map[each] == value:
-                    return True
-            return False
-
+        s_2_t = {}
+        t_2_s = {}
         for i in range(len(s)):
-            if not str_map.get(s[i]):
-                if not is_already_mapped(t[i]):
-                    str_map[s[i]] = t[i]
+            if not s_2_t.get(s[i]):
+                if not t_2_s.get(t[i]):
+                    s_2_t[s[i]] = t[i]
+                    t_2_s[t[i]] = s[i]
                 else:
                     return False
-            elif str_map[s[i]] != t[i]:
+            elif s_2_t[s[i]] != t[i]:
                 return False
 
         return True
