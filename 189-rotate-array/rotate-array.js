@@ -4,12 +4,7 @@
  * @return {void} Do not return anything, modify nums in-place instead.
  */
 var rotate = function(nums, k) {
-    if(nums.length === 1){
-        return nums
-    }
-    if(k > nums.length){
-        k = k % nums.length;
-    }
+    k = k % nums.length;
     let left = 0
     let right = nums.length - 1
     while(left <= right){
