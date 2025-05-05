@@ -19,7 +19,6 @@ var rotate = function(nums, k) {
         left += 1
         right -= 1
     }
-    console.log
     left = 0
     right = k - 1
     while(left <= right){
