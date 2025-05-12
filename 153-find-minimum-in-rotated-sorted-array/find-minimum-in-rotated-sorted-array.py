@@ -16,9 +16,6 @@ class Solution:
             if nums[mid] >= nums[right]:
                 # Minimum must lie to the right of mid
                 left = mid + 1
-            elif nums[mid] >= nums[left]:
-                # Left half is sorted and larger, so min is in left side
-                right = mid - 1
             else:
                 # Catch-all for the remaining case (also moves left boundary)
                 right = mid - 1
